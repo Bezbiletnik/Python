@@ -1,0 +1,29 @@
+Summary
+
+In today’s blog post we learned how to apply the Tesseract OCR engine with the
+Python programming language. This enabled us to apply OCR algorithms
+
+from within our Python script.
+
+The biggest downside is with the limitations of Tesseract itself. Tesseract works
+best when there are extremely clean segmentations of the foreground text from the
+background.
+
+Furthermore these segmentations need to be as high resolution (DPI) as
+possible and the characters in the input image cannot appear “pixelated” after
+segmentation. If characters do appear pixelated then Tesseract will struggle to
+correctly recognize the text — we found this out even when applying images
+captured under ideal conditions (a PDF screenshot).
+
+OCR, while no longer a new technology, is still an active area of research in the
+computer vision literature especially when applying OCR to real-world,
+unconstrained images. Deep learning and Convolutional Neural Networks (CNNs)
+are certainly enabling us to obtain higher accuracy, but we are still a long way from
+seeing “near perfect” OCR systems. Furthermore, as OCR has many applications
+across many domains, some of the best algorithms used for OCR are commercial
+
+and require licensing to be used in your own projects.
+
+My primary suggestion to readers when applying OCR to their own projects is to
+first try Tesseract and if results are undesirable move on to the Google Vision API.
+

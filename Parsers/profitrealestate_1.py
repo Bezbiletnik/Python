@@ -1,3 +1,4 @@
+'''Parser for "profit real estate" site'''
 from time import perf_counter, sleep
 import csv
 
@@ -7,18 +8,21 @@ import lxml
 
 URL = 'https://profitrealestate.ru/catalog/sell/Alaniia?content_id=&price_from=&price_to=&order=1'
 HEADERS = {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68',
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)\
+    Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,\
+    */*;q=0.8,application/signed-exchange;v=b3;q=0.9'
 }
 
 def get_html(url, params=None):
-    r = requests.get(url, headers=HEADERS, params=params)
-    return r
+    '''Here we get page's html'''
+    src = requests.get(url, headers=HEADERS, params=params)
+    return src
 
 def get_content(html):
+    '''Method that returns content from page'''
     soup = BeautifulSoup(html, 'lxml')
     items = soup.find_all('div', class_='catalog-change__object-item')
-    
     houses = []
     for item in items:
         #checking on the existence of price
@@ -44,6 +48,7 @@ def get_content(html):
     return houses
 
 def get_pages_count(html):
+    '''Pages counting'''
     soup = BeautifulSoup(html, 'lxml')
     pagination = soup.find_all('a', class_='number')
     if pagination:
@@ -52,13 +57,19 @@ def get_pages_count(html):
         return 1
 
 def save_in_file(items):
+    '''Save file in current directory'''
     with open('Parsers/Result.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Цена', 'Ссылка', 'Место', 'Кол-во комнат', 'Площадь', 'Год строительства'])
+        writer.writerow(['Цена', 'Ссылка',\
+                        'Место', 'Кол-во комнат',\
+                        'Площадь', 'Год строительства'])
         for item in items:
-            writer.writerow([item['price'], item['link'], item['location'], item['rooms'], item['area'], item['year']])
+            writer.writerow([item['price'], item['link'],\
+                             item['location'], item['rooms'],\
+                             item['area'], item['year']])
 
 def parse():
+    '''Main method that's call everything'''
     html = get_html(URL)
     if html.status_code == 200:
         summary = []

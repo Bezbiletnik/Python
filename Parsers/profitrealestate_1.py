@@ -43,7 +43,6 @@ def get_content(html):
             'rooms': item.find('div', class_='main-block5__object-information-appartment').get_text(strip=True),
             'area': item.find('span', class_='hot-deals__descript-span').get_text(strip=True),
             'year': item.find('div', class_='main-block5__object-information-year').get_text(strip=True)
-
         })
     return houses
 
@@ -53,8 +52,9 @@ def get_pages_count(html):
     pagination = soup.find_all('a', class_='number')
     if pagination:
         return int(pagination[-1].get_text(strip=True))
-    else:
-        return 1
+    # else:
+    #     return 1
+    return 1
 
 def save_in_file(items):
     '''Save file in current directory'''

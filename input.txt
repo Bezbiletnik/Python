@@ -1,0 +1,1 @@
+Что такое map(dictionary), set, stack, queue

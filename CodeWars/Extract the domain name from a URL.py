@@ -1,7 +1,7 @@
 '''My solution'''
-# import re
-# def domain_name(url):
-#     return re.sub(r'(http(s)?://|www.)|\.\w+|/(\w+)?/?(\w+)?', '', url)
+import re
+def domain_name(url):
+    return re.sub(r'(http(s)?://|www.)|\.\w+|/(\w+)?/?(\w+)?', '', url)
 
 
 #refactoring

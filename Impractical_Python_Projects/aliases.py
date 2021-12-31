@@ -45,7 +45,7 @@ def main():
         print('\n\n')
         print('{} {}'.format(first_name, last_name))
         print('\n\n')
-        print('Do you want to continue?(Y/other key)')
+        print('Do you want to continue?(y/other key)')
         try_again = input()
 
 if __name__ == '__main__':

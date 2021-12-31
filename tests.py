@@ -564,3 +564,288 @@
 #     numereal = random.randint(1, 10)
 #     count[numereal - 1] += 1
 # print(count)
+# import math
+
+# p = int(input()); x = int(input()); y = int(input())
+# # Переведем все в одру систему счисления(Penny)
+# penny = y + x*100
+# result = (penny * (p/100) + penny) / 100
+# # print(penny)
+# print(int(result), str(result).split('.')[1])
+
+
+# p = int(input()); x = int(input()); y = int(input())
+# result = ((y + x*100) * (p/100) + (y + x*100)) / 100
+# print(result // 100, result % 100)
+
+
+# a = int(input())
+# print(a // 100 + int((a % 100) / 10) + a % 10)
+
+
+# a = int(input())
+# b = int(input())
+# print(' '.join([str(x) for x in range(a, b+1)]))
+
+
+# a = int(input())
+# b = int(input())
+# if a < b:
+#     print(' '.join([str(x) for x in range(a, b+1)]))
+# else: print(' '.join([str(x) for x in range(a, b-1, -1)]))
+
+
+# import sys
+
+# a = [int(x.strip()) for x in sys.stdin.readlines()][1:]
+# print(a)
+# print(sum(a))
+
+
+# zero = 0
+# for i in range(int(input())):
+#     if int(input()) == 0:
+#         zero += 1
+# print(zero)
+
+
+# a = input()
+# print(a[2:3])
+# print(a[-2])
+# print(a[:5])
+# print(a[:-2])
+# print(a[::2])
+# print(a[1::2])
+# print(a[::-1])
+# print(a[-1::-2])
+# print(len(a))
+
+
+# a = int(input())
+# result = result_2 = 0
+# for i in range(1, a+1):
+#     result += i
+#     if i == a:
+#         break
+#     j = int(input())
+#     result_2 += j
+# print(result - result_2)
+
+
+# a = input()
+# # Hello, world!
+# first_word = a[:a.find(' ')]
+# second_word = a[a.find(' ')+1:]
+# print(a[:a.find(' ')], a[a.find(' ')+1:])
+
+
+# #1
+# a = input()
+# i = int(input())
+# print(a[:i]+a[i+1:])
+
+
+# #2
+# a = input()
+# print(' '.join([x for x in a.split() if len(x) % 2 == 0]))
+
+
+# #3
+# a = input()
+# print(len(a))
+
+
+# #4
+# sentence = input()
+# word = input()
+# print(word in sentence)
+
+
+# #5
+# a = input()
+# print(a.replace('.', ','))
+
+
+# a = input()
+# print(a.find('f', a.find('f')))
+
+
+# def itemsSort(items:list):
+#     dicts = {i: items.count(i) for i in set(items)}
+#     list1 = []
+#     for i in dicts:
+#         list1.insert(dicts[i], i)
+#         print(dicts[i])
+#     print(dicts)
+#     return sorted(dicts.values())
+
+
+# print(itemsSort([3, 1, 2, 2, 4])) # Answer: [1, 3, 4, 2, 2]
+# print(itemsSort([8, 5, 5, 5, 5, 1, 1, 1, 4, 4])) # Answer: [8, 4, 4, 1, 1, 1, 5, 5, 5, 5]
+
+
+# print(1//2)
+# print(3 + (4-3)//2)
+
+# nums = []
+# for i in range(1, 101):
+#     if i % 2 != 0 and i % 3 != 0 and i % 5 != 0:
+#         nums.append(i)
+# print(nums)
+# print(len(nums))
+
+
+# a = 2
+# count = 0
+# while a <= 100:
+#     print(a, end=' ')
+#     count += 1
+#     if count == 4:
+#         print('\n')
+#         count = 0
+#     a += 2
+
+# count = 0
+# for i in range(1, 101):
+#     if i % 2 != 0 and i % 3 != 0 and i % 5 != 0:
+#         print(i, end=' ')
+#         count += 1
+#     if count == 4:
+#         print('\n')
+#         count = 0
+
+
+# a = {x for x in range(1, 101) if x % 2 != 0}
+# b = {x for x in range(1, 101) if x % 3 != 0}
+# c = {x for x in range(1, 101) if x % 5 != 0}
+# print(a.intersection(b, c))
+
+
+# a, b = int(input()), []
+# for i in range(a):
+#     b.append([int(x) for x in input().split()])
+# print([x for x in sorted(b, key=lambda x: x[1], reverse=True)])
+
+
+# a = [1, 2, 3, 4, 5, 6, 7]
+# a[0] = a[-1]
+# print(a)
+
+
+# list1 = [1,2,4]
+# list2 = [1,3,4]
+# print(sorted(list1 + list2))
+
+
+# list1 = [1, 2, 3, 0, 0, 0]
+# list2 = [2,5,6]
+# print(sorted(list1[:3] + list2[:0]))
+
+
+# print('Привет мир')
+
+
+# x = 120 
+# x = str(x)[::-1]
+# print(int(x))
+
+
+# A = {1,4,5,6,7,8}
+# B = {3,5,6,7,9}
+# C = {2,5,6,7,8}
+# print((C.difference(A)).symmetric_difference(B.difference(C)))
+
+
+# nums1 = [1,2,3,0,0,0]
+# m = 3
+# nums2 = [2,5,6]
+# n = 3
+# nums1 = sorted(nums1[:m] + nums2)
+# print(sorted(nums1[:m] + nums2))
+# print(nums1)
+
+
+# nums1 = [1, 1]
+# nums2 = [9, 1, 3, 4]
+# lst3 = [value for value in nums1 if value in nums2]
+# print(lst3)
+# intersection = []
+# if len(nums2) < len(nums1):
+#     for i in nums2:
+#         if i in nums1:
+#             intersection.append(i)
+# else:
+#     for i in nums1:
+#         if i in nums2:
+#             intersection.append(i)
+
+# print(intersection)
+
+
+# import math
+# print(True if str(math.log2(16)).split('.')[1] == '0' else False)
+# print(math.log2(3))
+
+
+# print(12 % 10)
+
+
+# accounts = [[2,8,7],[7,1,3],[1,9,5]]
+# print(sum(max(accounts, key=lambda x: sum(x))))
+
+# from collections import Counter
+
+# sentence = "thequickbrownfoxjumpsoverthelazydog"
+# # alphabet = [chr(i) for i in range(97, 123)]
+# print(set(sentence))
+# a = Counter(sentence)
+# print(a)
+
+
+# for i in input().split():
+#     if int(i) % 2 == 0:
+#         print(i, end=' ')
+
+
+# list1 = [int(x) for x in input().split()]
+# slow, fast = 0, 1
+# while fast < len(list1):
+#     if list1[fast] > list1[slow]:
+#         print(list1[fast], end=' ')
+#     fast += 1
+#     slow += 1
+
+
+# a = input().split()
+# for i in range(0, len(a), 2):
+#     a[i], a[i+1] = a[i+1], a[i]
+# print(' '.join(a))
+
+
+# a = list(map(int, input().split()))
+# print(a.index(min(a)))
+# print(a.index(max(a)))
+# a[a.index(min(a))], a[a.index(max(a))] = a[a.index(max(a))], a[a.index(min(a))]
+# print(' '.join(str(x) for x in a))
+
+
+# sizes = list(map(int, input().split()))
+# X = int(input())
+# i = 0
+# while X <= sizes[i] and i < len(sizes):
+#     i += 1
+# print(i + 1)
+
+
+# s = "loveleetcode" # Expected: -1
+# d = dict()
+# for i, ch in enumerate(s):
+#     if ch not in d:
+#         d[ch] = [i, 1]
+#     else:
+#         d[ch][1] += 1
+
+# print(d.values())
+# print(-1 if all(x[1] != 1 for x in d.values()) else list(map(min, d.values())))
+
+

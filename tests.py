@@ -849,3 +849,98 @@
 # print(-1 if all(x[1] != 1 for x in d.values()) else list(map(min, d.values())))
 
 
+##class Person():G
+##    def __init__(self, name, age, sex, profession, school, home):
+##        self.name = name
+##        self.age = age
+##        self.sex = sex
+##        self.profession = profession
+##        self.school = school
+##        self.home = home
+##
+##    def showInfo(self):
+##        print("звать его", self.name)
+##        print("Ему", self.age, 'лет')
+##        print('Его пол:', self.sex)
+##        print('По профессий он:', self.profession)
+##        print("Учится он в:", self.school)
+##        print('Живет в:', self.home)
+
+
+##import random
+##
+##print('Welcome to the Rock, Paper, Scissors game!')
+##player_score, computer_score = 0, 0
+##again = 'y'
+##dict = {
+##        0: 'Rock',
+##        1: 'Paper',
+##        2: 'Scissors',
+##    }
+##while again == 'y':
+##    while player_score < 3 and computer_score < 3:
+##        print()
+##        try:
+##            player_input = int(input('Please enter your choice(0-Rock, 1-Paper, 2-Scissors): '))
+##            if player_input < 0 or player_input > 2:
+##                raise
+##        except:
+##            print('Enter the correct input!')
+##            continue
+##        print()
+##        computer_choice = random.choice(range(3))
+##        if player_input == computer_choice:
+##            print(dict[player_input], 'VS', dict[computer_choice])
+##            print('Draw!', player_score, ':', computer_score)
+##            continue
+##        elif (player_input, computer_choice) in [(0,1), (1,2), (2,0)]:
+##            print(dict[player_input], 'VS', dict[computer_choice])
+##            computer_score += 1
+##            print('You lose!', player_score, ':', computer_score)
+##        else:
+##            print(dict[player_input], 'VS', dict[computer_choice])
+##            player_score += 1
+##            print('You win!', player_score, ':', computer_score)
+##    print()
+##    again = input('Do you want to play again?(Y/n): ').lower()
+##    if again == 'y':
+##        player_score, computer_score = 0, 0
+##
+##print()
+##print('Game over!')
+##input('Push any button...')
+
+
+class MyCircularQueue:
+    
+    def __init__(self, k: int):
+        self.data = list()
+        self.length = k
+        self.head, self.tail = 0, 0
+
+    def enQueue(self, value: int) -> bool:
+        if self.tail != self.head and self.tail == self.length - 1
+            self.tail = 0
+            return False
+        self.data.insert(self.tail, value)        
+        self.tail += 1
+        return True
+
+    def deQueue(self) -> bool:
+        if self.isEmpty():
+            return False
+        head += 1
+        return True
+
+    def Front(self) -> int:
+        return data[self.head] if not self.isEmpty() else -1
+
+    def Rear(self) -> int:
+        return data[self.tail] if not self.isEmpty() else -1
+
+    def isEmpty(self) -> bool:
+        return 
+
+    def isFull(self) -> bool:
+        return
+

@@ -5,7 +5,9 @@ class TV():
         self.channelsList = [1, 2, 3, 5, 7, 10, 15, 31]
         self.nChannels = len(self.channelsList)
         self.channelIndex = 0
-        self.volume = 5
+        self.VOLUME_MINIMUM = 0
+        self.VOLUME_MAXIMUM = 10
+        self.volume = self.VOLUME_MAXIMUM
 
     def power(self):
         self.isOn = not self.isOn
@@ -15,7 +17,7 @@ class TV():
             return
         if self.isMuted:
             self.isMuted = False
-        if self.volume < 10:
+        if self.volume < self.VOLUME_MAXIMUM:
             self.volume += 1
 
     def volumeDown(self):
@@ -23,7 +25,7 @@ class TV():
             return
         if self.isMuted:
             self.isMuted = False
-        if self.volume > 0:
+        if self.volume > self.VOLUME_MINIMUM:
             self.volume -= 1
 
     def channelUp(self):
@@ -52,17 +54,16 @@ class TV():
             self.channelIndex = self.channelsList.index(newChannel)
 
     def showInfo(self):
-        print()
-        print('TV status:')
+        print('\nTV status:')
         if self.isOn:
-            print('TV is: On')
-            print('Channel is:', self.channelsList[self.channelIndex])
+            print('\tTV is: On')
+            print('\tChannel is:', self.channelsList[self.channelIndex])
             if self.isMuted:
-                print('Volume is:', self.volume, '(sound is muted)')
+                print('\tVolume is:', self.volume, '(sound is muted)')
             else:
-                print('Volume is:', self.volume)
+                print('\tVolume is:', self.volume)
         else:
-            print('TV is: Off')
+            print('\tTV is: Off')
 
 
 obj = TV()
